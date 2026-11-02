@@ -98,12 +98,26 @@ namespace Assignment
 
         public string ASN01_ReverseString(string str)
         {
-            throw new NotImplementedException();
+            Stack<char> stack = new Stack<char>();
+
+            foreach (char c in str)
+            {
+                stack.Push(c);
+            }
+
+            string reversed = "";
+            while (stack.Count > 0)
+            {
+                reversed += stack.Pop();
+            }
+
+            return reversed;
         }
 
         public bool ASN02_StackPalindrome(string str)
         {
-            throw new NotImplementedException();
+            string reversed = ASN01_ReverseString(str);
+            return str == reversed;
         }
 
         #endregion
